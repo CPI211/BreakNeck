@@ -23,7 +23,8 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private GameObject[] m_WheelMeshes = new GameObject[4];
         [SerializeField] private WheelEffects[] m_WheelEffects = new WheelEffects[4];
         [SerializeField] private Vector3 m_CentreOfMassOffset;
-        [SerializeField] private float m_MaximumSteerAngle;
+        [SerializeField] private float m_MaximumSteerAngleLowSpeed;
+        [SerializeField] private float m_MaximumSteerAngleHighSpeed;
         [Range(0, 1)] [SerializeField] private float m_SteerHelper; // 0 is raw physics , 1 the car will grip in the direction it is facing
         [Range(0, 1)] [SerializeField] private float m_TractionControl; // 0 is no traction control, 1 is full interference
         [SerializeField] private float m_FullTorqueOverAllWheels;
@@ -145,7 +146,11 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //Set the steer on the front wheels.
             //Assuming that wheels 0 and 1 are the front wheels.
-            m_SteerAngle = steering*m_MaximumSteerAngle;
+            print("Current Speed: " + CurrentSpeed);
+            print("Steering Angle: " + m_SteerAngle);
+            if (CurrentSpeed < 25) { m_SteerAngle = steering * m_MaximumSteerAngleLowSpeed; }
+            else if (CurrentSpeed < 25 && CurrentSpeed < (25 + (m_MaximumSteerAngleLowSpeed - m_MaximumSteerAngleHighSpeed))) { m_SteerAngle = steering * (m_MaximumSteerAngleLowSpeed - (CurrentSpeed - 50)); }
+            else { m_SteerAngle = steering * m_MaximumSteerAngleHighSpeed; }
             m_WheelColliders[0].steerAngle = m_SteerAngle;
             m_WheelColliders[1].steerAngle = m_SteerAngle;
 
