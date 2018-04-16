@@ -2603,7 +2603,7 @@ MonoBehaviour:
   m_Topspeed: 115
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
-  m_BrakeTorque: 2800
+  m_BrakeTorque: 12000
 --- !u!114 &114897777797532778
 MonoBehaviour:
   m_ObjectHideFlags: 1

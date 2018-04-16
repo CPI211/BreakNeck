@@ -8,10 +8,15 @@ public class CameraChange : MonoBehaviour
     public GameObject FPCamera;
     public GameObject NormalCamera;
     public GameObject FarCamera;
+    public GameObject Player;
     public int cameraMode;
 
     void Start()
     {
+        Player = GameObject.FindGameObjectsWithTag("Player")[0];
+        FPCamera = Player.transform.Find("Cameras").transform.Find("FPCamera").gameObject;
+        NormalCamera = Player.transform.Find("Cameras").transform.Find("NormalCamera").gameObject;
+        FarCamera = Player.transform.Find("Cameras").transform.Find("FarCamera").gameObject;
         FPCamera.SetActive(false);
         NormalCamera.SetActive(true);
         FarCamera.SetActive(false);

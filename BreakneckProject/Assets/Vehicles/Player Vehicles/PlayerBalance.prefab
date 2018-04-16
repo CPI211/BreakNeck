@@ -993,7 +993,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798088073267892}
   m_LocalRotation: {x: 0, y: 0.8433915, z: 0, w: 0.53729963}
-  m_LocalPosition: {x: 864.9614, y: 0, z: 927.1627}
+  m_LocalPosition: {x: 886.478, y: 0, z: 921.86993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4547854401954442}
@@ -2611,14 +2611,14 @@ MonoBehaviour:
   m_SteerHelper: 0.69
   m_TractionControl: 0.779
   m_FullTorqueOverAllWheels: 7500
-  m_ReverseTorque: 500
+  m_ReverseTorque: 50
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 300
   m_SpeedType: 0
   m_Topspeed: 120
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
-  m_BrakeTorque: 3000
+  m_BrakeTorque: 10000
 --- !u!114 &114979186724282336
 MonoBehaviour:
   m_ObjectHideFlags: 1
