@@ -10,7 +10,14 @@ public class CameraRotationLock : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.rotation = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
-        transform.Rotate(-20, 0, 0);
+        Vector3 xRotation = new Vector3(-20, 0, 0);
+        Quaternion toRotate = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
+        transform.rotation = toRotate;
+        transform.Rotate(xRotation);
+    }
+
+    IEnumerator cameraRotate()
+    {
+        yield return new WaitForSeconds(0);
     }
 }
