@@ -295,6 +295,7 @@
     <Compile Include="Assets\Scripts\HalfPointTrigger.cs" />
     <Compile Include="Assets\Scripts\LapComplete.cs" />
     <Compile Include="Assets\Scripts\LapTimeManager.cs" />
+    <Compile Include="Assets\Scripts\LoadLapTime.cs" />
     <Compile Include="Assets\Scripts\RocketLauncher.cs" />
   </ItemGroup>
   <ItemGroup>

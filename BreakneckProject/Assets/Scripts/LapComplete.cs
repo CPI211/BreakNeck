@@ -3,39 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LapComplete : MonoBehaviour {
+public class LapComplete : MonoBehaviour
+{
 
-	public GameObject LapCompleteTrig;
-	public GameObject HalfLapTrig;
+    public GameObject LapCompleteTrig;
+    public GameObject HalfLapTrig;
 
-	public GameObject MinuteDisplay;
-	public GameObject SecondDisplay;
-	public GameObject MilliDisplay;
+    public GameObject MinuteDisplay;
+    public GameObject SecondDisplay;
+    public GameObject MilliDisplay;
 
-	public GameObject LapTimeBox;
+    public GameObject LapTimeBox;
 
-	void OnTriggerEnter() {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerCollider"))
+        {
+            if (isBestTime())
+            {
+                if (LapTimeManager.SecondCount <= 9)
+                {
+                    SecondDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecondCount + ".";
+                }
+                else
+                {
+                    SecondDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecondCount + ".";
+                }
 
-		if(LapTimeManager.SecondCount <= 9) {
-			SecondDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecondCount + ".";
-		} else {
-			SecondDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecondCount + ".";
-		}
+                if (LapTimeManager.MinuteCount <= 9)
+                {
+                    MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MinuteCount + ":";
+                }
+                else
+                {
+                    MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MinuteCount + ":";
+                }
 
-		if(LapTimeManager.MinuteCount <= 9) {
-			MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MinuteCount + ".";
-		} else {
-			MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MinuteCount + ".";
-		}
+                MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+            }
+            
+            if (isBestTime())
+            {
+                PlayerPrefs.SetInt("MinSave", LapTimeManager.MinuteCount);
+                PlayerPrefs.SetInt("SecSave", LapTimeManager.SecondCount);
+                PlayerPrefs.SetFloat("MilliSave", LapTimeManager.MilliCount);
+            }
 
-		MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+            LapTimeManager.MinuteCount = 0;
+            LapTimeManager.SecondCount = 0;
+            LapTimeManager.MilliCount = 0;
 
-		LapTimeManager.MinuteCount = 0;
-		LapTimeManager.SecondCount = 0;
-		LapTimeManager.MilliCount = 0;
+            HalfLapTrig.SetActive(true);
+            LapCompleteTrig.SetActive(false);
+        }
 
-		HalfLapTrig.SetActive(true);
-		LapCompleteTrig.SetActive(false);
-	}
+    }
+
+    private bool isBestTime()
+    {
+        if (LapTimeManager.MinuteCount < PlayerPrefs.GetInt("MinSave"))
+        { return true; }
+
+        else if (LapTimeManager.MinuteCount == PlayerPrefs.GetInt("MinSave") &&
+                LapTimeManager.SecondCount < PlayerPrefs.GetInt("SecSave"))
+        { return true; }
+
+        else if (LapTimeManager.MinuteCount == PlayerPrefs.GetInt("MinSave") &&
+                LapTimeManager.SecondCount == PlayerPrefs.GetInt("SecSave") &&
+                LapTimeManager.MilliCount < PlayerPrefs.GetFloat("MilliSave"))
+        { return true; }
+
+        else { return false; }
+    }
 
 }

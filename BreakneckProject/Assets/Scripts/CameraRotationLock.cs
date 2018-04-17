@@ -14,6 +14,8 @@ public class CameraRotationLock : MonoBehaviour
         Quaternion toRotate = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
         transform.rotation = toRotate;
         transform.Rotate(xRotation);
+
+        //if (transform.position.y < 0.1f) { transform.position = new Vector3(transform.position.x, 0.11f, transform.position.z); }
     }
 
     IEnumerator cameraRotate()
