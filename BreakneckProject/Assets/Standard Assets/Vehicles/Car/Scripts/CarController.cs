@@ -146,10 +146,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //Set the steer on the front wheels.
             //Assuming that wheels 0 and 1 are the front wheels.
-            print("Current Speed: " + CurrentSpeed);
-            print("Steering Angle: " + m_SteerAngle);
-            if (CurrentSpeed < 25) { m_SteerAngle = steering * m_MaximumSteerAngleLowSpeed; }
-            else if (CurrentSpeed < 25 && CurrentSpeed < (25 + (m_MaximumSteerAngleLowSpeed - m_MaximumSteerAngleHighSpeed))) { m_SteerAngle = steering * (m_MaximumSteerAngleLowSpeed - (CurrentSpeed - 50)); }
+            if (CurrentSpeed < 0) { m_SteerAngle = steering * m_MaximumSteerAngleLowSpeed; }
+            else if (CurrentSpeed >= 0 && CurrentSpeed < MaxSpeed) { m_SteerAngle = steering * (m_MaximumSteerAngleLowSpeed - ((CurrentSpeed - 0) * ((m_MaximumSteerAngleLowSpeed - m_MaximumSteerAngleHighSpeed) / (MaxSpeed - 0)))); }
             else { m_SteerAngle = steering * m_MaximumSteerAngleHighSpeed; }
             m_WheelColliders[0].steerAngle = m_SteerAngle;
             m_WheelColliders[1].steerAngle = m_SteerAngle;
