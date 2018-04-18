@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 827
+  controlID: 31427
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 828
+  controlID: 31428
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 829
+  controlID: 31429
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fafaffff
-    m_LastClickedID: -1286
-    m_ExpandedIDs: 86fbffff9afbffff9cfbffff9efbffff00000000
+    m_SelectedIDs: 9afbffff
+    m_LastClickedID: -1126
+    m_ExpandedIDs: 6618f4ff6c18f4ffeef7f5ff8c31f9ffc654f9ff0a66ffff84fbffff86fbffff9afbffff9cfbffff9efbffff00000000082d0000aa2d0000dc2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -290,9 +290,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 864.33875, y: -57.129898, z: 948.34924}
+    m_Target: {x: 997.9642, y: -93.66958, z: 927.99066}
     speed: 2
-    m_Value: {x: 864.33875, y: -57.129898, z: 948.34924}
+    m_Value: {x: 997.9642, y: -93.66958, z: 927.99066}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -316,13 +316,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.43145272, y: 0.28075, z: -0.14330158, w: -0.8452767}
+    m_Target: {x: 0.29404637, y: 0.58866423, z: -0.24284796, w: 0.71276647}
     speed: 2
-    m_Value: {x: -0.43145272, y: 0.28075, z: -0.14330158, w: -0.8452767}
+    m_Value: {x: 0.29404637, y: 0.58866423, z: -0.24284796, w: 0.7127665}
   m_Size:
-    m_Target: 105.22311
+    m_Target: 149.33893
     speed: 2
-    m_Value: 105.22311
+    m_Value: 149.33893
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -469,18 +469,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Vehicles/Player Vehicles
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Vehicles/Player Vehicles
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\School\Semester 10\CPI211\Final Project\Github Folder\BreakneckProject
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 219}
-    m_SelectedIDs: 8e290000
-    m_LastClickedID: 10638
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 94290000
+    m_LastClickedID: 10644
     m_ExpandedIDs: 00000000c4270000a62800001a2a00006a2a0000a62a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -534,8 +534,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: fafaffff
-    m_LastClickedInstanceID: -1286
+    m_SelectedInstanceIDs: 9afbffff
+    m_LastClickedInstanceID: -1126
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005a2b0000b02d0000c62f0000
     m_RenameOverlay:
@@ -644,7 +644,7 @@ MonoBehaviour:
     width: 275
     height: 598
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 363.95508}
+  m_ScrollPosition: {x: 0, y: 302.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -371

@@ -16,6 +16,8 @@ public class LapComplete : MonoBehaviour
     public GameObject LapTimeBox;
 
     public GameObject LapCounter;
+    public GameObject TotalLapCounter;
+
     public int LapsCompleted;
     public int LapsTotal;
 
@@ -25,7 +27,7 @@ public class LapComplete : MonoBehaviour
     {
         if (other.CompareTag("PlayerCollider"))
         {
-            if (isBestTime())
+            if (isBestTime() && LapsCompleted != 0)
             {
                 if (LapTimeManager.SecondCount <= 9)
                 {
@@ -48,7 +50,7 @@ public class LapComplete : MonoBehaviour
                 MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
             }
             
-            if (isBestTime())
+            if (isBestTime() && LapsCompleted != 0)
             {
                 PlayerPrefs.SetInt("MinSave", LapTimeManager.MinuteCount);
                 PlayerPrefs.SetInt("SecSave", LapTimeManager.SecondCount);
@@ -65,6 +67,9 @@ public class LapComplete : MonoBehaviour
             {
                 if (LapsCompleted < 10) { LapCounter.GetComponent<Text>().text = "0" + LapsCompleted; }
                 else { LapCounter.GetComponent<Text>().text = "" + LapsCompleted; }
+
+                if (LapsCompleted < 10) { TotalLapCounter.GetComponent<Text>().text = "/ 0" + LapsTotal;  }
+                else { TotalLapCounter.GetComponent<Text>().text = "/ " + LapsTotal; }
             }
 
             if (LapsCompleted > LapsTotal) { RaceFinish.SetActive(true); }
