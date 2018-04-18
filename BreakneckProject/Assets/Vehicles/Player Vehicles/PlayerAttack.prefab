@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 4418102335935800}
   - component: {fileID: 54556704235378198}
   - component: {fileID: 114946312761243488}
+  - component: {fileID: 114413607791907108}
   - component: {fileID: 114761297797115364}
   - component: {fileID: 114498678285526968}
   - component: {fileID: 114248984185696588}
@@ -799,7 +800,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917186476998524}
   m_LocalRotation: {x: 0, y: 0.8433915, z: 0, w: 0.53729963}
-  m_LocalPosition: {x: 896.99884, y: 0, z: 916.19696}
+  m_LocalPosition: {x: 900.61755, y: 0, z: 918.182}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4851540990438354}
@@ -2454,6 +2455,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 54779501950732860, guid: 401b390213cf9aa419e17ea6ddfcf4b8, type: 2}
   startSide: {fileID: 4473935490110490}
+--- !u!114 &114413607791907108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1917186476998524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8f9baa1c2dea144be3512719cf0235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 375
 --- !u!114 &114427673033955906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2608,7 +2621,7 @@ MonoBehaviour:
   m_SteerHelper: 0.69
   m_TractionControl: 0.779
   m_FullTorqueOverAllWheels: 8000
-  m_ReverseTorque: 60
+  m_ReverseTorque: 90
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 300
   m_SpeedType: 0
@@ -2616,6 +2629,7 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 8000
+  SpeedDisplay: {fileID: 0}
 --- !u!114 &114959304998783880
 MonoBehaviour:
   m_ObjectHideFlags: 1

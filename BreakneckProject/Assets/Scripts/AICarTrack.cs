@@ -46,13 +46,9 @@ public class AICarTrack : MonoBehaviour
 
     IEnumerator OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.transform.parent.parent.name);
-        print(AICar.name);
 
         if (other.gameObject.transform.parent.parent.name == AICar.name)
         {
-            print(waypoint);
-
             GetComponent<BoxCollider>().enabled = false;
 
             waypointCount++;

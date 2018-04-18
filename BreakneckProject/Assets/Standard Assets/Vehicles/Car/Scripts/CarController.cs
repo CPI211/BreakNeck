@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -33,7 +34,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_Downforce = 100f;
         [SerializeField] private SpeedType m_SpeedType;
         [SerializeField] private float m_Topspeed = 200;
-        [SerializeField] private static int NoOfGears = 5;
+        [SerializeField] private static int NoOfGears = 1;
         [SerializeField] private float m_RevRangeBoundary = 1f;
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
@@ -56,6 +57,8 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
 
+        public GameObject SpeedDisplay;
+
         // Use this for initialization
         private void Start()
         {
@@ -70,6 +73,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
             m_Rigidbody = GetComponent<Rigidbody>();
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
+
+            SpeedDisplay = GameObject.Find("SpeedDisplay");
         }
 
 
@@ -136,6 +141,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 m_WheelColliders[i].GetWorldPose(out position, out quat);
                 m_WheelMeshes[i].transform.position = position;
                 m_WheelMeshes[i].transform.rotation = quat;
+                print(CurrentSpeed);
             }
 
             //clamp input values
@@ -172,6 +178,8 @@ namespace UnityStandardAssets.Vehicles.Car
             AddDownForce();
             CheckForWheelSpin();
             TractionControl();
+
+            if (this.CompareTag("Player")) { UpdateSpeedDisplay(); }
         }
 
 
@@ -365,6 +373,11 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
             }
             return false;
+        }
+
+        private void UpdateSpeedDisplay()
+        {
+            SpeedDisplay.GetComponent<Text>().text = "MPH: " + (int)CurrentSpeed;
         }
     }
 }
