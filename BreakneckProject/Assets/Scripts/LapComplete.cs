@@ -15,6 +15,9 @@ public class LapComplete : MonoBehaviour
 
     public GameObject LapTimeBox;
 
+    public GameObject LapCounter;
+    public int LapsCompleted;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerCollider"))
@@ -52,6 +55,9 @@ public class LapComplete : MonoBehaviour
             LapTimeManager.MinuteCount = 0;
             LapTimeManager.SecondCount = 0;
             LapTimeManager.MilliCount = 0;
+            LapsCompleted += 1;
+            if (LapsCompleted < 10) { LapCounter.GetComponent<Text>().text = "0" + LapsCompleted; }
+            else { LapCounter.GetComponent<Text>().text = "" + LapsCompleted; }
 
             HalfLapTrig.SetActive(true);
             LapCompleteTrig.SetActive(false);
