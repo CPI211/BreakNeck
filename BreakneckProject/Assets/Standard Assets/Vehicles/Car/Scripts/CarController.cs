@@ -141,7 +141,6 @@ namespace UnityStandardAssets.Vehicles.Car
                 m_WheelColliders[i].GetWorldPose(out position, out quat);
                 m_WheelMeshes[i].transform.position = position;
                 m_WheelMeshes[i].transform.rotation = quat;
-                print(CurrentSpeed);
             }
 
             //clamp input values

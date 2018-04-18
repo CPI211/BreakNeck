@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 4245373801904910}
   - component: {fileID: 54178797239087626}
   - component: {fileID: 114890722632487292}
+  - component: {fileID: 114445472215989192}
   - component: {fileID: 114654996556195460}
   - component: {fileID: 114641121033208152}
   m_Layer: 0
@@ -636,7 +637,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991182308376830}
   m_LocalRotation: {x: 0, y: 0.8433915, z: 0, w: 0.53729963}
-  m_LocalPosition: {x: 891.63336, y: 0, z: 905.4225}
+  m_LocalPosition: {x: 888.93317, y: 0, z: 912.00824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4827034166034638}
@@ -2183,6 +2184,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114445472215989192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991182308376830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8f9baa1c2dea144be3512719cf0235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthDisplay: {fileID: 0}
+  MaxHealth: 250
 --- !u!114 &114552636693281078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2286,6 +2300,7 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 2000
+  SpeedDisplay: {fileID: 0}
 --- !u!114 &114915307317045788
 MonoBehaviour:
   m_ObjectHideFlags: 1

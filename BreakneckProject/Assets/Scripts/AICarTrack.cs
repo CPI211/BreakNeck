@@ -47,7 +47,7 @@ public class AICarTrack : MonoBehaviour
     IEnumerator OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.transform.parent.parent.name == AICar.name)
+        if (AICar != null && other.gameObject.transform.parent.parent.name == AICar.name)
         {
             GetComponent<BoxCollider>().enabled = false;
 
