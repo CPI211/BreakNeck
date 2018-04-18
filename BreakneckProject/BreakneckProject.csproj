@@ -298,7 +298,9 @@
     <Compile Include="Assets\Scripts\LapTimeManager.cs" />
     <Compile Include="Assets\Scripts\LoadLapTime.cs" />
     <Compile Include="Assets\Scripts\MachineGunController.cs" />
+    <Compile Include="Assets\Scripts\RaceFinishController.cs" />
     <Compile Include="Assets\Scripts\SpeedDisplayController.cs" />
+    <Compile Include="Assets\Scripts\VictoryCameraController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

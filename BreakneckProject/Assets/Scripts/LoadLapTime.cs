@@ -21,7 +21,8 @@ public class LoadLapTime : MonoBehaviour
 
         if (MinCount >= 10) { MinDisplay.GetComponent<Text>().text = "" + MinCount + ":"; }
         else { MinDisplay.GetComponent<Text>().text = "0" + MinCount + ":"; }
-        SecDisplay.GetComponent<Text>().text = "" + SecCount + ".";
+        if (SecCount >= 10) { SecDisplay.GetComponent<Text>().text = "" + SecCount + "."; }
+        else { SecDisplay.GetComponent<Text>().text = "0" + SecCount + "."; }
         MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
 
     }

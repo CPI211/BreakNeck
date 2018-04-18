@@ -10,7 +10,7 @@ public class MachineGunController : MonoBehaviour {
 
     private bool canShoot;
     private float timer;
-    public float shotDelay = 0.3f;
+    public float shotDelay;
 
     private void Start()
     {

@@ -17,6 +17,9 @@ public class LapComplete : MonoBehaviour
 
     public GameObject LapCounter;
     public int LapsCompleted;
+    public int LapsTotal;
+
+    public GameObject RaceFinish;
 
     void OnTriggerEnter(Collider other)
     {
@@ -55,10 +58,16 @@ public class LapComplete : MonoBehaviour
             LapTimeManager.MinuteCount = 0;
             LapTimeManager.SecondCount = 0;
             LapTimeManager.MilliCount = 0;
-            LapsCompleted += 1;
-            if (LapsCompleted < 10) { LapCounter.GetComponent<Text>().text = "0" + LapsCompleted; }
-            else { LapCounter.GetComponent<Text>().text = "" + LapsCompleted; }
 
+            LapsCompleted += 1;
+
+            if (LapsCompleted <= LapsTotal)
+            {
+                if (LapsCompleted < 10) { LapCounter.GetComponent<Text>().text = "0" + LapsCompleted; }
+                else { LapCounter.GetComponent<Text>().text = "" + LapsCompleted; }
+            }
+
+            if (LapsCompleted > LapsTotal) { RaceFinish.SetActive(true); }
             HalfLapTrig.SetActive(true);
             LapCompleteTrig.SetActive(false);
         }

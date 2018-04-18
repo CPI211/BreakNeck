@@ -15,14 +15,19 @@ public class LapTimeManager : MonoBehaviour {
 	public GameObject SecondBox;
 	public GameObject MilliBox;
 
-
-
+    public GameObject LapCompleteTrigger;
 
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 
-		MilliCount += Time.deltaTime * 10;
+        if (LapCompleteTrigger.GetComponent<LapComplete>().LapsCompleted <=
+            LapCompleteTrigger.GetComponent<LapComplete>().LapsTotal)
+        {
+            MilliCount += Time.deltaTime * 10;
+        }
+
 		MilliDisplay = MilliCount.ToString("F0");
 		MilliBox.GetComponent<Text>().text = "" + MilliDisplay;
 

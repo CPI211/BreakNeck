@@ -180,5 +180,14 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             return (1.0f - value)*from + value*to;
         }
+
+        public void Mute()
+        {
+            m_LowAccel.mute = true;
+            m_HighAccel.mute = true;
+            m_LowDecel.mute = true;
+            m_HighDecel.mute = true;
+            return;
+        }
     }
 }
