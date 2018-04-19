@@ -7,7 +7,12 @@ public class LapCompleteAI : MonoBehaviour
 {
 
     public GameObject LapCounter;
-    public GameObject[] AICar;
+    private GameObject[] AICar;
+
+    private void Start()
+    {
+        AICar = GameObject.FindGameObjectsWithTag("AICar");
+    }
 
     void Update()
     {
@@ -18,7 +23,9 @@ public class LapCompleteAI : MonoBehaviour
     {
         for (int i = 0; i < AICar.Length; i++)
         {
-            if (AICar[i] != null && other.gameObject.transform.parent.parent.gameObject == AICar[i])
+            if (other.tag == "Terrain" || other.tag == "Ammo") { }
+
+            else if (other.tag != "Terrain" && AICar[i] != null && other.gameObject.transform.parent.parent.gameObject == AICar[i])
             {
                 if (AICar[i].GetComponent<PositionTriggersAI>().LapCompleteTrigger == true)
                 {

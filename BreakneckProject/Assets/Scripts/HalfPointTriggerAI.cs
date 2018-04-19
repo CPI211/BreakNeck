@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class HalfPointTriggerAI : MonoBehaviour
 {
-    public GameObject[] AICar;
+    private GameObject[] AICar;
+
+    private void Start()
+    {
+        AICar = GameObject.FindGameObjectsWithTag("AICar");
+    }
 
     void OnTriggerEnter(Collider other)
     {

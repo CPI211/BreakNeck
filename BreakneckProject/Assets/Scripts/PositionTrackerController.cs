@@ -10,7 +10,7 @@ public class PositionTrackerController : MonoBehaviour
     public GameObject PlayerCar;
     public GameObject PlayerPositionTriggers;
     public GameObject RaceFinishTrigger;
-    public GameObject[] AICar;
+    private GameObject[] AICar;
     public int PlayerPosition;
     public bool isFinished;
 
@@ -18,7 +18,8 @@ public class PositionTrackerController : MonoBehaviour
 	void Start ()
     {
         PlayerCar = GameObject.FindGameObjectsWithTag("Player")[0];
-	}
+        AICar = GameObject.FindGameObjectsWithTag("AICar");
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -31,6 +32,8 @@ public class PositionTrackerController : MonoBehaviour
             {
                 if (AICar[i] != null)
                 {
+                    print(AICar.Length);
+
                     if (PlayerPositionTriggers.gameObject.transform.Find("LapCompleteTrigger").gameObject.GetComponent<LapComplete>().LapsCompleted
                     < AICar[i].GetComponent<PositionTriggersAI>().CurrentLap)
                     {
@@ -57,6 +60,7 @@ public class PositionTrackerController : MonoBehaviour
             }
         }
 
-        PositionDisplay.GetComponent<Text>().text = "0" + PlayerPosition;
+        if (PlayerPosition < 10) { PositionDisplay.GetComponent<Text>().text = "0" + PlayerPosition; }
+        else { PositionDisplay.GetComponent<Text>().text = "" + PlayerPosition; }
     }
 }
