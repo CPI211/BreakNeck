@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 114136374629945616}
   - component: {fileID: 114869188628441294}
   - component: {fileID: 114570869246366942}
+  - component: {fileID: 114836560809011332}
   m_Layer: 0
   m_Name: AIAttack
   m_TagString: AICar
@@ -297,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1483255026859566
 GameObject:
   m_ObjectHideFlags: 1
@@ -2384,6 +2385,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114836560809011332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181939514309698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3463d79bea0cb4083fe10dfc06927a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfPointTrigger: 0
+  lapCompleteTrigger: 1
 --- !u!114 &114869188628441294
 MonoBehaviour:
   m_ObjectHideFlags: 1

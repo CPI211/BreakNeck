@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114322800176859916}
   - component: {fileID: 114883522143912702}
   - component: {fileID: 114461645316730110}
+  - component: {fileID: 114846610378843642}
   m_Layer: 0
   m_Name: AITank
   m_TagString: AICar
@@ -618,7 +619,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1102885294818090}
   m_LocalRotation: {x: 0, y: 0.8870109, z: 0, w: 0.46174863}
-  m_LocalPosition: {x: 902.0465, y: 0.00000047683716, z: 905.3358}
+  m_LocalPosition: {x: 901.63153, y: 0, z: 893.9032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4320601739434052}
@@ -2320,7 +2321,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1102885294818090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20fa55eb64c5cea4aa3c71ae19c434bf, type: 3}
   m_Name: 
@@ -2373,6 +2374,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 114050913724318848}
+--- !u!114 &114846610378843642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102885294818090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3463d79bea0cb4083fe10dfc06927a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfPointTrigger: 0
+  lapCompleteTrigger: 0
 --- !u!114 &114883522143912702
 MonoBehaviour:
   m_ObjectHideFlags: 1

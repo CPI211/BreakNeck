@@ -27,6 +27,7 @@ public class LapComplete : MonoBehaviour
     {
         if (other.CompareTag("PlayerCollider"))
         {
+            print("Hello?");
             if (isBestTime() && LapsCompleted != 0)
             {
                 if (LapTimeManager.SecondCount <= 9)

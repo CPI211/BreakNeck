@@ -6,7 +6,7 @@ public class AICarTrack : MonoBehaviour
 {
 
     public GameObject tracker;
-    public GameObject AICar;
+    public GameObject Car;
     public GameObject[] waypoint = new GameObject[34];
     public int waypointCount;
 
@@ -47,7 +47,7 @@ public class AICarTrack : MonoBehaviour
     IEnumerator OnTriggerEnter(Collider other)
     {
 
-        if (AICar != null && other.gameObject.transform.parent.parent.name == AICar.name)
+        if (Car != null && other.gameObject.transform.parent.parent.name == Car.name)
         {
             GetComponent<BoxCollider>().enabled = false;
 
