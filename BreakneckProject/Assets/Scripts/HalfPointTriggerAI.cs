@@ -12,10 +12,10 @@ public class HalfPointTriggerAI : MonoBehaviour
         {
             if (AICar[i] != null && other.gameObject.transform.parent.parent.gameObject == AICar[i])
             {
-                if (AICar[i].GetComponent<PositionTriggersAI>().halfPointTrigger == true)
+                if (AICar[i].GetComponent<PositionTriggersAI>().HalfPointTrigger == true)
                 {
-                    AICar[i].GetComponent<PositionTriggersAI>().halfPointTrigger = false;
-                    AICar[i].GetComponent<PositionTriggersAI>().lapCompleteTrigger = true;
+                    AICar[i].GetComponent<PositionTriggersAI>().HalfPointTrigger = false;
+                    AICar[i].GetComponent<PositionTriggersAI>().LapCompleteTrigger = true;
                 }
             }
         }

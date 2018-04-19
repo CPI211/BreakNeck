@@ -188,10 +188,12 @@ Assets/Scripts/CameraStable.cs
 Assets/Scripts/HalfPointTrigger.cs
 Assets/Scripts/HalfPointTriggerAI.cs
 Assets/Scripts/LapComplete.cs
+Assets/Scripts/LapCompleteAI.cs
 Assets/Scripts/LapTimeManager.cs
 Assets/Scripts/LoadLapTime.cs
 Assets/Scripts/LockTriggerPosition.cs
 Assets/Scripts/MachineGunController.cs
+Assets/Scripts/PositionTrackerController.cs
 Assets/Scripts/PositionTriggersAI.cs
 Assets/Scripts/RaceFinishController.cs
 Assets/Scripts/SpeedDisplayController.cs

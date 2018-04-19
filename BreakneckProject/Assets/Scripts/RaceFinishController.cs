@@ -10,6 +10,7 @@ public class RaceFinishController : MonoBehaviour
     private GameObject ViewModes;
     private GameObject LevelMusic;
     private GameObject CompleteTrigger;
+    private GameObject PositionTracker;
     public AudioSource finishMusic;
 
     private void Start()
@@ -19,6 +20,7 @@ public class RaceFinishController : MonoBehaviour
         ViewModes = Player.gameObject.transform.Find("Cameras").gameObject;
         LevelMusic = GameObject.Find("Music");
         CompleteTrigger = GameObject.Find("RaceFinishTrigger");
+        PositionTracker = GameObject.Find("PositionTracker");
         print(Player);
         print(FinishCam);
         print(ViewModes);
@@ -38,6 +40,7 @@ public class RaceFinishController : MonoBehaviour
         FinishCam.SetActive(true);
         LevelMusic.SetActive(false);
         ViewModes.SetActive(false);
+        PositionTracker.GetComponent<PositionTrackerController>().isFinished = true;
         finishMusic.Play();
         CompleteTrigger.SetActive(false);
     }

@@ -217,5 +217,10 @@ namespace UnityStandardAssets.Vehicles.Car
             m_Target = target;
             m_Driving = true;
         }
+
+        public Transform GetTarget()
+        {
+            return m_Target;
+        }
     }
 }

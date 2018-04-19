@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PositionTriggersAI : MonoBehaviour
 {
-    public bool halfPointTrigger;
-    public bool lapCompleteTrigger;
-    public int currentLap;
+    public bool HalfPointTrigger;
+    public bool LapCompleteTrigger;
+    public int CurrentLap;
 }

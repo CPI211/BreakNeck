@@ -193,6 +193,7 @@ Assets/Scripts/LapTimeManager.cs
 Assets/Scripts/LoadLapTime.cs
 Assets/Scripts/LockTriggerPosition.cs
 Assets/Scripts/MachineGunController.cs
+Assets/Scripts/PositionTrackerController.cs
 Assets/Scripts/PositionTriggersAI.cs
 Assets/Scripts/RaceFinishController.cs
 Assets/Scripts/SpeedDisplayController.cs
