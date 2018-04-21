@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 23051682331934896}
   - component: {fileID: 95849983659997884}
   m_Layer: 0
-  m_Name: 'Vehicle Tank '
+  m_Name: CarModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +771,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408469146369622}
   m_LocalRotation: {x: 0, y: 0.8433915, z: 0, w: 0.53729963}
-  m_LocalPosition: {x: 913.5, y: 0, z: 913.48}
+  m_LocalPosition: {x: 836.8037, y: 0, z: 932.66425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4624322346599922}

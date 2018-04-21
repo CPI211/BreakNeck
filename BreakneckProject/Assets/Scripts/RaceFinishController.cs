@@ -6,6 +6,7 @@ using UnityStandardAssets.Vehicles.Car;
 public class RaceFinishController : MonoBehaviour
 {
     private GameObject Player;
+    private GameObject[] AICar;
     private GameObject FinishCam;
     private GameObject ViewModes;
     private GameObject LevelMusic;
@@ -16,6 +17,7 @@ public class RaceFinishController : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectsWithTag("Player")[0];
+        AICar = GameObject.FindGameObjectsWithTag("AICar");
         FinishCam = Player.gameObject.transform.Find("VictoryCameraFocusPoint").gameObject;
         ViewModes = Player.gameObject.transform.Find("Cameras").gameObject;
         LevelMusic = GameObject.Find("Music");
@@ -32,16 +34,28 @@ public class RaceFinishController : MonoBehaviour
     {
         this.GetComponent<BoxCollider>().enabled = false;
         Player.SetActive(false);
-        //Player.GetComponent<CarController>().CurrentSpeed = 0.0f;
+        for (int i=0; i<AICar.Length;i++) { AICar[i].SetActive(false); }
         Player.GetComponent<CarController>().enabled = false;
         Player.GetComponent<CarUserControl>().enabled = false;
+        Player.GetComponent<MachineGunController>().enabled = false;
         Player.GetComponent<CarAudio>().Mute();
-        Player.SetActive(true);
-        FinishCam.SetActive(true);
+
+        for (int i = 0; i < AICar.Length; i++)
+        {
+            AICar[i].GetComponent<CarController>().enabled = false;
+            AICar[i].GetComponent<MachineGunAI>().enabled = false;
+            AICar[i].GetComponent<CarAIControl>().enabled = false;
+        }
+
         LevelMusic.SetActive(false);
+        finishMusic.Play();
+
+        Player.SetActive(true);
+        for (int i = 0; i < AICar.Length; i++) { AICar[i].SetActive(true); }
+
+        FinishCam.SetActive(true);
         ViewModes.SetActive(false);
         PositionTracker.GetComponent<PositionTrackerController>().isFinished = true;
-        finishMusic.Play();
         CompleteTrigger.SetActive(false);
     }
 }

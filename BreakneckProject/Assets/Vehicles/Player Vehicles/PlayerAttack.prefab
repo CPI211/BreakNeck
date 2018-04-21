@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 23085951638760858}
   - component: {fileID: 95552877029018688}
   m_Layer: 0
-  m_Name: 'Vehicle Attack '
+  m_Name: CarModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,7 +900,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917186476998524}
   m_LocalRotation: {x: 0, y: 0.8433915, z: 0, w: 0.53729963}
-  m_LocalPosition: {x: 913.5, y: 0, z: 913.48}
+  m_LocalPosition: {x: 839.1478, y: 0, z: 935.38574}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4851540990438354}

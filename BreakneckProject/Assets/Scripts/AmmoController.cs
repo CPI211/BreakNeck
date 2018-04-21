@@ -20,13 +20,13 @@ public class AmmoController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "AICar" || other.gameObject.tag == "Terrain")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "AICar" || other.gameObject.tag == "Terrain")
         {
             print("Hit.");
             GameObject.Destroy(this.gameObject);
         }
 
-        if (other.gameObject.tag == "AICar")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "AICar")
         {
             other.gameObject.GetComponent<CarHealthController>().DealDamage(damage);
         }

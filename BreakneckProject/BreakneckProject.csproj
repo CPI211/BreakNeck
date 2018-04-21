@@ -293,6 +293,7 @@
     <Compile Include="Assets\Scripts\CameraChange.cs" />
     <Compile Include="Assets\Scripts\CameraRotationLock.cs" />
     <Compile Include="Assets\Scripts\CameraStable.cs" />
+    <Compile Include="Assets\Scripts\CarAnimationController.cs" />
     <Compile Include="Assets\Scripts\HalfPointTrigger.cs" />
     <Compile Include="Assets\Scripts\HalfPointTriggerAI.cs" />
     <Compile Include="Assets\Scripts\LapComplete.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="Assets\Scripts\LapTimeManager.cs" />
     <Compile Include="Assets\Scripts\LoadLapTime.cs" />
     <Compile Include="Assets\Scripts\LockTriggerPosition.cs" />
+    <Compile Include="Assets\Scripts\MachineGunAI.cs" />
     <Compile Include="Assets\Scripts\MachineGunController.cs" />
     <Compile Include="Assets\Scripts\PositionTrackerController.cs" />
     <Compile Include="Assets\Scripts\PositionTriggersAI.cs" />

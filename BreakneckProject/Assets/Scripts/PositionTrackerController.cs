@@ -8,9 +8,11 @@ public class PositionTrackerController : MonoBehaviour
 {
     public GameObject PositionDisplay;
     public GameObject PlayerCar;
+    public GameObject PlayerCarModel;
     public GameObject PlayerPositionTriggers;
     public GameObject RaceFinishTrigger;
     private GameObject[] AICar;
+    private GameObject[] AICarModel;
     public int PlayerPosition;
     public bool isFinished;
 
@@ -18,7 +20,13 @@ public class PositionTrackerController : MonoBehaviour
 	void Start ()
     {
         PlayerCar = GameObject.FindGameObjectsWithTag("Player")[0];
+        PlayerCarModel = PlayerCar.transform.Find("CarModel").gameObject;
         AICar = GameObject.FindGameObjectsWithTag("AICar");
+        AICarModel = new GameObject[AICar.Length];
+        for(int i = 0; i < AICar.Length; i++)
+        {
+            AICarModel[i] = AICar[i].transform.Find("CarModel").gameObject;
+        }
     }
 	
 	// Update is called once per frame
@@ -32,7 +40,6 @@ public class PositionTrackerController : MonoBehaviour
             {
                 if (AICar[i] != null)
                 {
-                    print(AICar.Length);
 
                     if (PlayerPositionTriggers.gameObject.transform.Find("LapCompleteTrigger").gameObject.GetComponent<LapComplete>().LapsCompleted
                     < AICar[i].GetComponent<PositionTriggersAI>().CurrentLap)
@@ -51,8 +58,8 @@ public class PositionTrackerController : MonoBehaviour
                          && PlayerPositionTriggers.gameObject.transform.Find("PlayerTracker").gameObject.GetComponent<AICarTrack>().waypointCount
                          == AICar[i].GetComponent<CarAIControl>().GetTarget().gameObject.GetComponent<AICarTrack>().waypointCount
 
-                         && Vector3.Distance(PlayerCar.transform.position, PlayerPositionTriggers.gameObject.transform.Find("PlayerTracker").transform.position)
-                         > Vector3.Distance(AICar[i].transform.position, AICar[i].GetComponent<CarAIControl>().GetTarget().transform.position))
+                         && Vector3.Distance(PlayerCarModel.transform.position, PlayerPositionTriggers.gameObject.transform.Find("PlayerTracker").transform.position)
+                         > Vector3.Distance(AICarModel[i].transform.position, PlayerPositionTriggers.gameObject.transform.Find("PlayerTracker").transform.position))
                     {
                         PlayerPosition += 1;
                     }

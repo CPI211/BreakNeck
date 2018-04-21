@@ -25,7 +25,7 @@ public class MachineGunController : MonoBehaviour {
 
 			Rigidbody rocketInstant;
 			rocketInstant = Instantiate (rocket, startSide.position, startSide.rotation) as Rigidbody;
-			rocketInstant.AddForce (startSide.up * 5000);
+            rocketInstant.AddForce (startSide.up * 5000);
 		}
 
         if (!canShoot)
