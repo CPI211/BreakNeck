@@ -2521,7 +2521,7 @@ MonoBehaviour:
   startSide: {fileID: 4946817017886048}
   MachineGun: {fileID: 1479612945347912}
   shotDelay: 2
-  lineOfSight: 50
+  LineOfSight: 75
 --- !u!114 &114541752088261212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2546,6 +2546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthDisplay: {fileID: 0}
+  MessagePanel: {fileID: 0}
   MaxHealth: 150
 --- !u!114 &114661884122801568
 MonoBehaviour:
